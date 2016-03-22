@@ -1,0 +1,11 @@
+<HomeSidecontent>:
+    size_hint: .3, None
+    pos_hint:  {'x': 0, 'y': 0}
+    height: 0
+
+    canvas.before:
+        Color:
+            rgb: .1, .1, .1
+        Rectangle:
+            size: self.size
+            pos:  self.pos

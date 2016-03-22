@@ -1,0 +1,11 @@
+<OptionPopup>:
+    size_hint: .4, .3
+    pos_hint: {'x':.3, 'y':.35}
+    auto_dismiss: False
+    
+    canvas.before:
+        Color:
+            rgb: 1, 0, 0
+        Rectangle:
+            size: self.size
+            pos: self.pos

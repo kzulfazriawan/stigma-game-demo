@@ -1,1 +1,2 @@
-# stigma-game-demo
+# Stigma-demo-game
+Demo game build under Stigma framework
