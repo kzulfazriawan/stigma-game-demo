@@ -55,10 +55,6 @@ def eventAttach(function=None, action='on_press'):
     '''
     this is an function used for adding a function into property for event based on
     their action.
-
-    :param function:    unbound method object
-    :param action:      string event action
-    :return:            property event
     '''
 
     if function is not None:
@@ -73,9 +69,6 @@ def eventAttach(function=None, action='on_press'):
 def kivyBuilder(*args):
     '''
     this function is used to open builder language kivy.
-
-    :param args:    list arguments path
-    :return:        builder kivy
     '''
     if args is not None:
         kivy_path = path.join(*args)

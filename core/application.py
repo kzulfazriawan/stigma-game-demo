@@ -21,9 +21,6 @@ class _CApplication(object):
 def _separating(data):
     '''
     this is just a simple application used for separate the alias widget with it's path.
-
-    :param data:    string alias data
-    :return:        list data separated
     '''
     if isinstance(data, basestring):
         data = data.split('@')
@@ -36,14 +33,6 @@ class Alias(_CApplication):
         '''
         this is Alias class, is used to aliasing object into method that ease the user
         to define object.
-
-        .. log changed class::
-            .. version 0.0.2::
-                Added setAll method to define instance in one method.
-
-        :param apppath:
-        :param getClass:
-        :return:
         '''
         super(Alias, self).__init__()
 
@@ -55,11 +44,6 @@ class Alias(_CApplication):
     def setInstance(self, place, key, instances):
         '''
         this is an method used for instancing the object into method in lambda object.
-
-        :param place:       string place alias
-        :param key:         string key alias
-        :param instances:   object instance
-        :return:            self class
         '''
         instances = _separating(instances)
         if isinstance(instances, list) and isinstance(key, basestring):
@@ -79,8 +63,6 @@ class Alias(_CApplication):
         '''
         this is an method to set the instance in one way, if you gonna use set instance instead
         setAll it's ok.
-
-        :param setdict:    dictionary instance
         '''
         if isinstance(setdict, dict) and setdict is not None:
             for k, v in setdict.items():
@@ -93,6 +75,5 @@ class Anchor(_CApplication):
     def __init__(self):
         '''
         this is an anchor class,
-
         '''
         super(Anchor, self).__init__()

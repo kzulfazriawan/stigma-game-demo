@@ -12,8 +12,6 @@ class Directory(object):
         '''
         this is a function to show the data from directory save, so basically
         the directory save will load any file inside it and return it as directory
-
-        :return :      data directory files.
         '''
         if os.path.exists(self.directory):
             files = {}
@@ -29,11 +27,7 @@ class Directory(object):
 
     def dumpFiles(self, what, name):
         '''
-
-
-        :param  :what:
-        :param  :name:
-        :return :
+        used to write an data into a file.
         '''
         if os.path.exists(self.directory):
             files = os.path.join(self.directory, name)

@@ -24,8 +24,6 @@ class Model(Model):
         '''
         A model class, in here I gonna structurized my layout and widget for game functionality.
         there's home, game, option, ending and serialize model layout.
-
-        :return:
         '''
         super(Model, self).__init__()
         self.option_bind_store    = []
@@ -54,9 +52,6 @@ class Model(Model):
     def home(self, assemble=True):
         '''
         home display, like homepage application it appear on first time or when the game ended.
-s
-        :param  :       boolean assemble.
-        :return :       Widget of HomeLayout
         '''
         self.layout.HomeImagewrapper.gathering([self.widget.HomeImagebackground,
                                                 self.widget.HomeImagelogo])
@@ -89,12 +84,7 @@ s
 
     def game(self, assemble=True, parameter = None):
         '''
-        This is model game
-
-        :param  :       Assemble
-        :param  :       Part
-        :param  :       Line
-        :return :       Widget of GameLayout
+        Model game play
         '''
         self.layout.GameContainer.gathering([self.widget.GameImagebackground,
                                              self.widget.GameImagepersoneone,
@@ -150,10 +140,7 @@ s
 
     def ending(self, assemble=True, end = None):
         '''
-
-        :param assemble:
-        :param ending:
-        :return:
+        ending of game
         '''
         self.layout.EndContainer.gathering([self.widget.EndImage])
         self.layout.EndWrapper.gathering([self.widget.EndButtonexit,
@@ -187,9 +174,6 @@ s
         '''
         this is function when the scenario reach the option route for game application.
         here the widget had 4 default button, it used to store the event for option game.
-
-        :param opt:
-        :return:
         '''
         if opt is not None and isinstance(opt, dict):
 
@@ -245,11 +229,6 @@ s
     def serialize(self, option = None, savedata = []):
         '''
         this is model for dialog serialization like load or save state in application game.
-
-        :param option:
-        :param savedata:
-        :param data:
-        :return:
         '''
         if option is not None:
             list_button = [
@@ -305,7 +284,5 @@ s
     def layer(self):
         '''
         The alias I turned into property because it had no parameter needed inside.
-
-        :return :       list class of function.
         '''
         return [self.ending(False), self.game(False), self.home(False), self.intro(True)]

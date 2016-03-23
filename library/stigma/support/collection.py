@@ -17,9 +17,6 @@ class CollectMap(_SCollect):
     def __init__(self, default= None, **kwargs):
         '''
         this is consttuctor of collection mapping class.
-
-        :param default:
-        :param kwargs:
         '''
         super(CollectMap, self).__init__()
 
@@ -29,9 +26,6 @@ class CollectMap(_SCollect):
     def append(self, **kwargs):
         '''
         used to appending map dictionary
-
-        :param kwargs:      dictionary to append
-        :return:            self class
         '''
         self._collect.update(kwargs)
         return self
@@ -39,10 +33,6 @@ class CollectMap(_SCollect):
     def inject(self, key, value):
         '''
         used for inject some key into value.
-
-        :param key:         the key
-        :param value:       value you wanted
-        :return:            self class
         '''
         self._collect[key] = value
         return self
@@ -50,9 +40,6 @@ class CollectMap(_SCollect):
     def pop(self, what):
         '''
         used to remove some key with it's value.
-
-        :param what:        the key
-        :return:            self class
         '''
         self._collect.pop(what)
         return self
@@ -61,8 +48,6 @@ class CollectMap(_SCollect):
     def show(self):
         '''
         used for showing about the collection result.
-
-        :return:            collection result
         '''
         return self._collect
 
@@ -70,8 +55,6 @@ class CollectMap(_SCollect):
     def transform(self):
         '''
         used for transorming the dictionary collection into object data.
-
-        :return:            collection object
         '''
         for k, v in self._collect.items():
             if isinstance(k, basestring):

@@ -22,8 +22,6 @@ class Files(_CFiles):
     def __init__(self, **kwargs):
         '''
         core class for filesystem configurations.
-
-        :param kwargs:      dictionary path
         '''
         super(Files, self).__init__()
 
@@ -41,10 +39,6 @@ class Files(_CFiles):
     def _impoter(self, instance, substance):
         '''
         this private method used to import modules dynamically.
-
-        :param instance:    pakcage modules
-        :param substance:   modules class
-        :return:            the module it self
         '''
         pathmod = os.path.join(instance, substance)
 

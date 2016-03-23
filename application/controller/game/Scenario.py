@@ -8,11 +8,17 @@ class Scenario(object):
     _option = Option()
     
     def conversation(self, part, line):
+        '''
+        method to showed up conversation from part and line as Scenario written.
+        '''
         if isinstance(part, str) and isinstance(line, int):
             conversation = getattr(self._script, part)
             return conversation[line]
         
     def option(self, option, bound):
+        '''
+        function to show option and it's functionality.
+        '''
         if isinstance(option, basestring):
             decision = {}
             dialog   = tuple()

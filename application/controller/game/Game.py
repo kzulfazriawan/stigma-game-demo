@@ -8,8 +8,6 @@ class Game(State):
         '''
         this is game class that will handle some control in game application like dialogue, option,
         plot and even visual.
-
-        :return:
         '''
         super(Game, self).__init__()
 
@@ -25,11 +23,6 @@ class Game(State):
         '''
         This is collection function, it just a custom method that I created to handle the method
         from behavior class.
-
-        :param instanceDialogue:
-        :param instanceVisual:
-        :param optionShow:
-        :return:
         '''
         self._instance_dialogue = instanceDialogue
         self._instance_visual   = instanceVisual
@@ -41,10 +34,6 @@ class Game(State):
     def dialog(self, conversation, state):
         '''
         this is override function dialog I created to passing some parameter into abstract class from state.
-
-        :param conversation:
-        :param state:
-        :return:
         '''
         return self.dialogue(conversation, (self.widget['name'] , self.widget['dialogue'], self.widget['save']), state)
 
@@ -52,8 +41,6 @@ class Game(State):
         '''
         this is a function when conversation in game is played based on scenario that I already
         create before.
-
-        :param  :       list or tuple current state of game conversation
         '''
         if current_state is not None and (isinstance(current_state, list) or isinstance(current_state, tuple)):
             part, line = current_state
@@ -84,9 +71,6 @@ class Game(State):
         '''
         This is a state function for visual stating in game, say when the scenario reach some event
         with background or character. it will do change the graphics as scenario write it.
-
-        :param  :background:
-        :param  :character:
         '''
 
         if background is not None and isinstance(background, basestring):
@@ -103,8 +87,5 @@ class Game(State):
     def option(self, option):
         '''
         This is override function, it passing the class about the isntance dialogue method from behavior
-
-        :param option:
-        :return:
         '''
         return self.modal(option, self.plot)

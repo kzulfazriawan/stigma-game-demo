@@ -12,20 +12,13 @@ class Graphics(object):
     def background(self, where, widget):
         '''
         function that would provide the widget with source image.
-
-        :param where:
-        :param widget:
-        :return:
         '''
         if where is not None and isinstance(widget, object):
             widget.focus(getattr(self._background, where))
 
     def character(self, who, widget):
         '''
-
-        :param who:
-        :param widget:
-        :return:
+        function used to calculated, show up, and reset character.
         '''
         if isinstance(who, dict) and (isinstance(widget, list) or isinstance(widget, tuple)):
             i              = 0

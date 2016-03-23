@@ -8,8 +8,6 @@ class Serialize(Files.Directory):
         #TODO CHANGES : FIXED, COMPLETED
         '''
         this class is used to manage the serialization state for the application game.
-
-        :return:
         '''
         super(Serialize, self).__init__()
 
@@ -18,8 +16,6 @@ class Serialize(Files.Directory):
         #TODO CHANGES : FIXED, COMPLETED
         '''
         this property will show the list about the serialization data has been stored.
-
-        :return:
         '''
         data_save = self.listFiles()
         save_list = []
@@ -54,9 +50,6 @@ class Serialize(Files.Directory):
         '''
         this method is used to store serialize for application game state, after it stored
         user can open any state based on it.
-
-        :param kwargs:
-        :return:
         '''
 
         name  = '{}.json'.format(kwargs['slot'])

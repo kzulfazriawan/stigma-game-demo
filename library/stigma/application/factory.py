@@ -16,8 +16,6 @@ class ApplicationFactory(object):
     def factoryWidget(self):
         '''
         Widget factory class.
-
-        :return :       widget class
         '''
         if isinstance(self.baseclass, object) and self.baseclass is not None:
             class SWidget(self.baseclass):
@@ -26,9 +24,6 @@ class ApplicationFactory(object):
                 def bound(self, **kwargs):
                     '''
                     this function is used to bind any event for the widget it self.
-
-                    :param kwargs:      event=string, bound=object, unbound=object
-                    :return :           self class
                     '''
                     event = kwargs['event']
 
@@ -57,8 +52,6 @@ class ApplicationFactory(object):
     def factoryInput(self):
         '''
         Factory Input, this factory is still a widget factory.
-
-        :return :       Input class.
         '''
         if isinstance(self.baseclass, object) and self.baseclass is not None:
             class SInput(self.factoryWidget):
@@ -69,9 +62,6 @@ class ApplicationFactory(object):
                     Whoops ! this is event function, what the hell is it doing here !
                     well, since it's input factory class it would be better if input has
                     this feature.
-
-                    :param instance:        part of kivy stuff
-                    :param value:           part of kivy stuff
                     '''
                     if self.text == self._text_placeholder:
                         self.text = ''
@@ -91,8 +81,6 @@ class ApplicationFactory(object):
     def factoryLayout(self):
         '''
         Factory layout, this is factory for layouting application.
-
-        :return :       Input class.
         '''
         if isinstance(self.baseclass, object) and self.baseclass is not None:
             class SLayout(self.baseclass):
@@ -102,9 +90,6 @@ class ApplicationFactory(object):
                     '''
                     this function is used to gathering widget or even layout for self layout
                     you can instance it as list or the object it self.
-
-                    :param part:        list or object widget
-                    :return:            self class
                     '''
                     if part is not None:
                         if isinstance(part, list):
@@ -121,8 +106,6 @@ class ApplicationFactory(object):
                 def adding(self):
                     '''
                     this is a property for class to merge gathered items into it self.
-
-                    :return:        self class
                     '''
                     if self._part is not None:
                         for v in self._part:
@@ -133,8 +116,6 @@ class ApplicationFactory(object):
                 def removing(self):
                     '''
                     same as above but this property is used to remove them.
-
-                    :return:        self class
                     '''
                     if self._part is not None:
                         for v in self._part:
@@ -147,8 +128,6 @@ class ApplicationFactory(object):
     def factoryModal(self):
         '''
         Factory layout, this is factory for popup, it class is inheritance from layout.
-
-        :return:
         '''
         if isinstance(self.baseclass, object) and self.baseclass is not None:
             class SModal(self.factoryLayout):
@@ -158,8 +137,6 @@ class ApplicationFactory(object):
                 def adding(self):
                     '''
                     this is override property for popup adding.
-
-                    :return:
                     '''
                     if self._part is not None:
                         for v in self._part:

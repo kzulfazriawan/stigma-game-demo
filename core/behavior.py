@@ -24,11 +24,6 @@ class Behavior(_Behavior):
     def __init__(self):
         '''
         Behavior class, you can check it from the documentation for more information
-
-        .. log changed class::
-            .. version 0.0.2::
-                The name of abstract method for declare all it's function has been
-                changed from "bundle" to "alias".
         '''
         super(Behavior, self).__init__()
 

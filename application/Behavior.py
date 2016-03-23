@@ -26,8 +26,6 @@ class Behavior(Behavior):
         '''
         this is behavior class, in here I gonna write what behavior application need to do, like
         open game, serialization, visual, even dialogue.
-
-        :return:
         '''
         super(Behavior, self).__init__()
 
@@ -48,11 +46,7 @@ class Behavior(Behavior):
     # -- START OF ANIMATION METHOD --
     def animation(self, what, instance=None, anime='showing', duration=0):
         '''
-
-        :param what:
-        :param instance:
-        :param anime:
-        :param duration:
+        function animation provider
         '''
         if isinstance(what, str) and instance is not None:
             if what == 'layout':
@@ -64,8 +58,7 @@ class Behavior(Behavior):
 
     def animationIntro(self):
         '''
-
-        :return:
+        This is intro animation, it will show when the game is running for the first time.
         '''
         self.layout.IntroLayout.opacity = 0
 
@@ -76,8 +69,6 @@ class Behavior(Behavior):
         '''
         This is initial Home animation, it will show a little animation when the application
         started running in first time, or application back to home.
-
-        :return:
         '''
         self.layout.HomeLayout.opacity        = 0
         self.layout.HomeSidecontent.height    = 0
@@ -91,14 +82,13 @@ class Behavior(Behavior):
 
     def animationHomeDown(self):
         '''
-
-        :return:
+        This is animation home down, it will disappear home when the game started.
         '''
         self.animation('layout', 'HomeLayout', 'fading', .1)
 
     def animationGameUp(self):
         '''
-
+        This is function used for showing animation game.
         '''
         self.layout.GameLayout.opacity = 0
 
@@ -106,7 +96,7 @@ class Behavior(Behavior):
 
     def animationEndUp(self):
         '''
-
+        set the ending animation when it show up.
         '''
         self.layout.EndLayout.opacity = 0
 
@@ -114,7 +104,7 @@ class Behavior(Behavior):
 
     def animationEndDown(self):
         '''
-
+        manage animation when the ending instance down (disappear)
         '''
         self.animation('layout', 'EndWrapper', 'fading', .2)
         self.animation('layout', 'EndLayout' , 'fading', .5)
@@ -123,9 +113,8 @@ class Behavior(Behavior):
     # -- START OF MODELING METHOD --
     def openCloseModel(self, open_what = None, parameter = None, close_what = None):
         '''
-
-        :param falsing:
-        :return:
+        this function is provide open and close the model application, in here
+        the model will manage the it appearance.
         '''
         if open_what is not None:
             if close_what is not None and isinstance(close_what, list):
@@ -139,8 +128,7 @@ class Behavior(Behavior):
 
     def openIntro(self):
         '''
-
-        :return:
+        used for open intro when game is running for the first time.
         '''
         self.animationIntro()
         clocker(lambda dt: self.openCloseModel('home', None, ['intro']), 'once', 3)
@@ -150,9 +138,6 @@ class Behavior(Behavior):
         This is an event function used for open Game, when the game is open I need to reset any unnecessary
         model and the game model should be reseted because it's bug if the model is already instanced and
         it instanced again.
-
-        :param parameter:
-        :return:
         '''
         self.eventCloseModal('SerializePopup')
         self.animationHomeDown()
@@ -163,14 +148,13 @@ class Behavior(Behavior):
         This is an function used to open the Ending of game.
 
         :param end:
-        :return:
         '''
         clocker(lambda dt: self.openCloseModel('ending', end, ['game']), 'once', .1)
 
     def openHome(self, parameter = None):
         '''
-
-        :return:
+        method used for showing home when the intro is done, game is over or even player stop
+        the game and back to home.
         '''
         if parameter == 'ending':
             self.animationEndDown()
@@ -179,13 +163,14 @@ class Behavior(Behavior):
         elif parameter == 'gaming':
             clocker(lambda dt: self.openCloseModel('home', None, ['game']), 'once', .1)
 
+        elif parameter == 'intro':
+            clocker(lambda dt: self.openCloseModel('home', None, ['intro']), 'once', .1)
+
     # -- END OF MODELING METHOD --
     # -- START OF EVENT METHOD --
     def eventDialogue(self, background = None, character = None):
         '''
         this function is use to change the conversation game.
-
-        :return:
         '''
         if background is not None or character is not None:
             self.instanceVisualization(background, character)
@@ -197,10 +182,6 @@ class Behavior(Behavior):
         '''
         This is a event option that used to close option serialization, option or anything
         based on parameter. it also to apart model function.
-
-        :param layout:
-        :param model:
-        :return:
         '''
         if isinstance(layout, basestring):
             getattr(self.layout, layout).dismiss()
@@ -210,20 +191,16 @@ class Behavior(Behavior):
 
     # -- END OF EVENT METHOD --
     # -- START OF INSTANCE METHOD --
-    def instanceDialogue(self, part, line, state = None):
+    def instanceDialogue(self, part, line, popup = None):
         '''
         Same as below, is manage the dialogue between NPC and player in game, it also manage
         the option if player used to serialization or option.
-
-        :param part:
-        :param line:
-        :param state:
-        :return:
         '''
         if isinstance(part, basestring) and isinstance(line, int):
-            if state == 'loadsave':
+            if popup == 'loadsave':
                 self.eventCloseModal('SerializePopup', 'serialize')
-            elif state == 'option':
+
+            elif popup == 'option':
                 self.eventCloseModal('OptionPopup', 'option')
 
             self.widget.GameTextdialogue.part = [part, line]
@@ -234,10 +211,6 @@ class Behavior(Behavior):
         '''
         This function is manange the behavior about visualization game, like character or
         background game in some state.
-
-        :param background:
-        :param who:
-        :return:
         '''
         self.controller.Game.visual(background, who)
 
@@ -252,9 +225,6 @@ class Behavior(Behavior):
         '''
         This is an event to show serialization dialog like save or load data application.
         it used to save some state of application or load them to continue the state application.
-
-        :param serialization:
-        :return:
         '''
         self.model.serialize(serialization, self.controller.Serialize.list)
         self.layout.SerializePopup.open()
@@ -263,20 +233,12 @@ class Behavior(Behavior):
         '''
         This event function is used for showing option for application, say when you play the game
         in some state and there's a checkpoint for your option. it will show as your option.
-
-        :param option:
-        :return:
         '''
         option = self.controller.Game.option(option)
         self.model.option(option)
         self.layout.OptionPopup.open()
 
     def saveGame(self, slot):
-        '''
-
-        :param slot:
-        :return:
-        '''
         if slot is not None and isinstance(slot, int):
             key = 'save_%s' %slot
             data = {key : {}}
@@ -291,8 +253,6 @@ class Behavior(Behavior):
         '''
         this is an abstract method from core, you need to define it as function,
         and after that don't forget to declare it as property.
-
-        :return :       the method you wanted.
         '''
         recole = CollectMap(animation              = self.animation,
                             animation_home_up      = self.animationHomeUp,

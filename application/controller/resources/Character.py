@@ -5,7 +5,6 @@ class Character(object):
     '''
 
     '''
-    # TODO : di format pake join path biar path support diwindows.
     stigma = {
         'usual' : '{}/assets/image/character/stigma/usual.png'.format(Files.rootpath),
         'talk'  : '{}/assets/image/character/stigma/talk.png'.format(Files.rootpath),

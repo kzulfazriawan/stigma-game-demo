@@ -22,7 +22,6 @@ class Windows(_CWindows):
         '''
         this is window class used for manage window interface for application.
 
-        :param kwargs:
         '''
         super(Windows, self).__init__()
         self.app = kwargs['app']
@@ -31,8 +30,6 @@ class Windows(_CWindows):
     def setWindow(self):
         '''
         a method will set window based on configuration.
-
-        :return:        variable configuration window
         '''
         for k, v in self.app.items():
             if isinstance(v, dict):
@@ -44,8 +41,5 @@ class Windows(_CWindows):
     def getWindow(self, info):
         '''
         a method will show information about window configuration.
-
-        :param info:    string key variable configuration
-        :return:        information configuration
         '''
         return self.app[info]

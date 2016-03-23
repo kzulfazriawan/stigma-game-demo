@@ -34,8 +34,6 @@ class MainApplication(App):
     def build(self):
         '''
         Everything we need to build constructed here.
-
-        :return application:    private variable application from self classs.
         '''
 
         return self._application
