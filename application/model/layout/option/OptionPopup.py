@@ -7,3 +7,4 @@ kivyBuilder(Files.apppath, 'model', 'builder', 'option', 'optionpopup.kv')
 class OptionPopup(Popup):
     def __init__(self):
         super(OptionPopup, self).__init__()
+        self.title = "Pick one Option"

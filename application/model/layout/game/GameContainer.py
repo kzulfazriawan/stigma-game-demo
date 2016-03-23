@@ -1,7 +1,7 @@
 from core import Files
 from library.stigma.application import Float
 from library.stigma.helper import kivyBuilder
-kivyBuilder(Files.apppath, 'model', 'builder', 'game', 'container.kv')
+kivyBuilder(Files.apppath, 'model', 'builder', 'game', 'gamecontainer.kv')
 
 
 class GameContainer(Float):

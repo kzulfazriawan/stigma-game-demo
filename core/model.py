@@ -24,17 +24,12 @@ class Model(_Model):
     def __init__(self):
         '''
         Model class, you can check it from the documentation for more information
-
-        .. log changed class::
-            .. version 0.0.6::
-                The name of abstract method for declare all it's function has been
-                changed from "bundle" to "collection".
         '''
         super(Model, self).__init__()
 
     @abstractmethod
-    def collection(self):
+    def layer(self):
         '''
-        an abstract method is used to collecting method model for application to build.
+        an abstract method is used layering the model method.
         '''
         pass

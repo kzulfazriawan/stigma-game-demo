@@ -15,6 +15,7 @@ already designed into any kind of things.
 see "Model" documentation for more information.
 '''
 from core import Model
+from library.stigma.support.collection import CollectMap
 
 
 class Model(Model):
@@ -122,6 +123,7 @@ s
 
                 self.widget.GameImagepersoneone.reset()
                 self.widget.GameImagepersonetwo.reset()
+
                 self.widget.GameTextdialogue.part = [part, line]
                 self.behavior.event_dialogue(background, character)
 
@@ -147,7 +149,6 @@ s
         return self.layout.GameLayout
 
     def ending(self, assemble=True, end = None):
-        # TODO : THIS MODEL IS STABLE, DO NOT CHANGE IT.
         '''
 
         :param assemble:
@@ -183,8 +184,6 @@ s
         return self.layout.EndLayout
 
     def option(self, opt=None):
-        #TODO CHANGED : FIXED, COMPLETE
-        #TODO REMODEL : REMODEL THE WIDGET AND LAYOUT.
         '''
         this is function when the scenario reach the option route for game application.
         here the widget had 4 default button, it used to store the event for option game.
@@ -221,6 +220,7 @@ s
                     try:
                         option_modal[k].bound(event='on_press', bind=v, unbind=self.option_bind_store[k])
                         self.option_bind_store[k] = v
+
                     except IndexError:
                         option_modal[k].bound(event='on_press', bind=v)
                         self.option_bind_store.append(v)
@@ -228,7 +228,7 @@ s
                     option_modal[k].bound(event='on_press', bind=v)
                     self.option_bind_store.append(v)
 
-            self.option_widget_store  = option_modal
+            self.option_widget_store = option_modal
 
             self.layout.OptionOption.removing
             self.layout.OptionWrapper.removing
@@ -243,8 +243,6 @@ s
         return self.layout.OptionPopup
 
     def serialize(self, option = None, savedata = []):
-        #TODO CHANGED : FIXED, COMPLETE
-        #TODO REMODEL : REMODEL THE WIDGET AND LAYOUT.
         '''
         this is model for dialog serialization like load or save state in application game.
 
@@ -304,9 +302,9 @@ s
         return self.layout.SerializePopup
 
     @property
-    def collection(self):
+    def layer(self):
         '''
-        The collection I turned into property because it had no parameter needed inside.
+        The alias I turned into property because it had no parameter needed inside.
 
         :return :       list class of function.
         '''

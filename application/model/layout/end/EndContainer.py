@@ -1,7 +1,7 @@
 from core import Files
 from library.stigma.application import Float
 from library.stigma.helper import kivyBuilder
-kivyBuilder(Files.apppath, 'model', 'builder', 'end', 'container.kv')
+kivyBuilder(Files.apppath, 'model', 'builder', 'end', 'optioncontainer.kv')
 
 
 class EndContainer(Float):

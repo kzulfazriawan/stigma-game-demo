@@ -1,7 +1,7 @@
 from core import Files
 from library.stigma.application import Box
 from library.stigma.helper import kivyBuilder
-kivyBuilder(Files.apppath, 'model', 'builder', 'option', 'wrapper.kv')
+kivyBuilder(Files.apppath, 'model', 'builder', 'option', 'optionwrapper.kv')
 
 
 class OptionWrapper(Box):

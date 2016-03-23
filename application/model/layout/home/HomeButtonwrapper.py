@@ -1,7 +1,7 @@
 from core import Files
 from library.stigma.application import Box
 from library.stigma.helper import kivyBuilder, animation
-kivyBuilder(Files.apppath, 'model', 'builder', 'home', 'buttonwrapper.kv')
+kivyBuilder(Files.apppath, 'model', 'builder', 'home', 'homebuttonwrapper.kv')
 
 
 class HomeButtonwrapper(Box):

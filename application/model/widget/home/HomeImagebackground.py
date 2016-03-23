@@ -1,7 +1,7 @@
 from core import Files
 from library.stigma.application import Image
 from library.stigma.helper import kivyBuilder
-kivyBuilder(Files.apppath, 'model', 'builder', 'home', 'imagebackground.kv')
+kivyBuilder(Files.apppath, 'model', 'builder', 'home', 'homeimagebackground.kv')
 
 
 class HomeImagebackground(Image):

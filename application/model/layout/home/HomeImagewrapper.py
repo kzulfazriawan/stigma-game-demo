@@ -1,7 +1,7 @@
 from core import Files
 from library.stigma.application import Float
 from library.stigma.helper import kivyBuilder
-kivyBuilder(Files.apppath, 'model', 'builder', 'home', 'imagewrapper.kv')
+kivyBuilder(Files.apppath, 'model', 'builder', 'home', 'homeimagewrapper.kv')
 
 
 class HomeImagewrapper(Float):

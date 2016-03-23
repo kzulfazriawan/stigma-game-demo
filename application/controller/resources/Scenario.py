@@ -111,8 +111,7 @@ class Scenario(object):
         ({'me': "Why invented one ?"},),
         ({'kzul': "Why eh? because I just love code and share it to people"},),
         ({'me': "That's it?"},),
-        ({
-             'kzul': "Um well, stigma isn't pure framework she was invented with another frameworks \n and libraries like kivy"},),
+        ({'kzul': "Um well, stigma isn't pure framework she was invented with another frameworks \n and libraries like kivy"},),
         ({'kzul': "I still use some of them to create what common need"},),
         ({'me': "Okay, Why you invented python framework?"},),
         ({'kzul': "Why python? "},),

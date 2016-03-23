@@ -1,7 +1,4 @@
-from core import Files
 from library.stigma.application import Button
-from library.stigma.helper import kivyBuilder
-kivyBuilder(Files.apppath, 'model', 'builder', 'home', 'loadgame.kv')
 
 
 class HomeLoadgame(Button):

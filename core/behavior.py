@@ -28,12 +28,12 @@ class Behavior(_Behavior):
         .. log changed class::
             .. version 0.0.2::
                 The name of abstract method for declare all it's function has been
-                changed from "bundle" to "collection".
+                changed from "bundle" to "alias".
         '''
         super(Behavior, self).__init__()
 
     @abstractmethod
-    def collection(self):
+    def alias(self):
         '''
         an abstract method is used to collecting method or data for model class.
         '''

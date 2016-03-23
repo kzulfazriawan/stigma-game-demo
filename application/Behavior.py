@@ -23,7 +23,6 @@ from library.stigma.helper import eventAttach, clocker
 class Behavior(Behavior):
 
     def __init__(self):
-        #TODO CHANGED : ALL THIS CLASS IS FIXED AND NO NEED TO CHANGE
         '''
         this is behavior class, in here I gonna write what behavior application need to do, like
         open game, serialization, visual, even dialogue.
@@ -64,6 +63,10 @@ class Behavior(Behavior):
             clocker(lambda dt: getattr(instance, anime)(), 'once', duration)
 
     def animationIntro(self):
+        '''
+
+        :return:
+        '''
         self.layout.IntroLayout.opacity = 0
 
         self.animation('layout', 'IntroLayout', 'showing', .1)
@@ -191,7 +194,6 @@ class Behavior(Behavior):
         self.controller.Game.plot(current_part)
 
     def eventCloseModal(self, layout, model = None):
-        #TODO CHANGED : FIXED, COMPLETE
         '''
         This is a event option that used to close option serialization, option or anything
         based on parameter. it also to apart model function.
@@ -209,7 +211,6 @@ class Behavior(Behavior):
     # -- END OF EVENT METHOD --
     # -- START OF INSTANCE METHOD --
     def instanceDialogue(self, part, line, state = None):
-        #TODO CHANGED : FIXED, COMPLETE
         '''
         Same as below, is manage the dialogue between NPC and player in game, it also manage
         the option if player used to serialization or option.
@@ -259,7 +260,6 @@ class Behavior(Behavior):
         self.layout.SerializePopup.open()
 
     def modalOption(self, option):
-        #TODO CHANGED : FIXED, COMPLETE
         '''
         This event function is used for showing option for application, say when you play the game
         in some state and there's a checkpoint for your option. it will show as your option.
@@ -272,7 +272,6 @@ class Behavior(Behavior):
         self.layout.OptionPopup.open()
 
     def saveGame(self, slot):
-        # TODO CHANGES : FIXED , COMPLETED
         '''
 
         :param slot:
@@ -281,21 +280,14 @@ class Behavior(Behavior):
         if slot is not None and isinstance(slot, int):
             key = 'save_%s' %slot
             data = {key : {}}
+
             data[key].update(self.widget.GameButtonsave.data)
             data[key].update(self.widget.GameButtonsave.graphic)
 
             self.controller.Serialize.save(slot=slot, write=data)
 
-    #def showHome(self, remove):
-        #if remove == 'ending':
-        #    clocker(lambda dt: self.layout.EndWrapper.runAnimation(), 'once', .1)
-        #    clocker(lambda dt: self.layout.EndLayout.runAnimation(), 'once', .2)
-        #    clocker(lambda dt: self.model.ending(False), 'once', .5)
-
-        #        clocker(lambda dt: self.model.home(True), 'once', .6)
-
     @property
-    def collection(self):
+    def alias(self):
         '''
         this is an abstract method from core, you need to define it as function,
         and after that don't forget to declare it as property.

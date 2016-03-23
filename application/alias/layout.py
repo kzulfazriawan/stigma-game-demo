@@ -24,7 +24,6 @@ alias = (['IntroLayout' , 'IntroLayout@intro'],
          # -- Modal layout. option model well, watch out for misspelled dude.
          ['OptionPopup'   , 'OptionPopup@option'],
          ['OptionContainer', 'OptionContainer@option'],
-         ['OptionOverlay'  , 'OptionOverlay@option'],
          ['OptionWrapper'  , 'OptionWrapper@option'],
          ['OptionOption'   , 'OptionOption@option'],
 
