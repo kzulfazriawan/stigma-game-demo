@@ -11,10 +11,10 @@ class Character(object):
         'shy'   : '{}/assets/image/character/stigma/shy.png'.format(Files.rootpath),
         'smile' : '{}/assets/image/character/stigma/smile.png'.format(Files.rootpath),
     }
-    teacher = {
+    kzul = {
         'usual' : '{}/assets/image/character/kzul/usual.png'.format(Files.rootpath),
         'talk'  : '{}/assets/image/character/kzul/talk.png'.format(Files.rootpath),
-        'smile' : '{}/assets/image/character/kzul/usual.png'.format(Files.rootpath),
+        'smile' : '{}/assets/image/character/kzul/smile.png'.format(Files.rootpath),
     }
     character = {
         'clear' : '{}/assets/image/character/clear.png'.format(Files.rootpath),
