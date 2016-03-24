@@ -1,3 +1,4 @@
+import os
 from core import Files
 
 
@@ -6,10 +7,10 @@ class Character(object):
 
     '''
     stigma = {
-        'usual' : '{}/assets/image/character/stigma/usual.png'.format(Files.rootpath),
-        'talk'  : '{}/assets/image/character/stigma/talk.png'.format(Files.rootpath),
-        'shy'   : '{}/assets/image/character/stigma/shy.png'.format(Files.rootpath),
-        'smile' : '{}/assets/image/character/stigma/smile.png'.format(Files.rootpath),
+        'usual': os.path.join(format(Files.rootpath), 'assets', 'image', 'character', 'stigma', 'usual.png'),
+        'talk': os.path.join(format(Files.rootpath), 'assets', 'image', 'character', 'stigma', 'talk.png'),
+        'smile': os.path.join(format(Files.rootpath), 'assets', 'image', 'character', 'stigma', 'smile.png'),
+        'shy': os.path.join(format(Files.rootpath), 'assets', 'image', 'character', 'stigma', 'shy.png')
     }
     kzul = {
         'usual' : '{}/assets/image/character/kzul/usual.png'.format(Files.rootpath),

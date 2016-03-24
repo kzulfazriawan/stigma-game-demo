@@ -53,8 +53,14 @@ def logs(what='', message=''):
 
 def eventAttach(function=None, action='on_press'):
     '''
-    this is an function used for adding a function into property for event based on
-    their action.
+    eventAttach(unbound_object, str_action)
+
+    create an method which ready to attach into event or bound, it will
+    generate the method that has single parameter into event function.
+
+    .. notes:
+        is required to set the parameter into your function, even you no
+        need it but it have to. and also set the widget with variable "params"
     '''
 
     if function is not None:

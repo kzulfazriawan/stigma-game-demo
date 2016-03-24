@@ -23,15 +23,19 @@ class ApplicationFactory(object):
 
                 def bound(self, **kwargs):
                     '''
-                    this function is used to bind any event for the widget it self.
+                    bound(event='str_event', bind=unbound object, unbind=unbound object)
+
+                    Used for binding any event for the widget, it usually used to create an
+                    event for widget also it can unbinding the event that already bound.
+
+                    .. notes :
+                        the widget cannot replace the event with the other event if it already containing
+                        an event inside. you must unbind the event that already attached in the widget.
                     '''
                     event = kwargs['event']
 
                     if isinstance(event, str):
                         try:
-                            # -- some widget has problem with binding event, if the widget had bound event
-                            # -- inside and try to replace it with another event it didn't works. so you
-                            # -- must unbind the event before you attach the other one.
                             unbind = {event : kwargs['unbind']}
                             self.unbind(**unbind)
                         except KeyError:
