@@ -6,7 +6,8 @@ main = {
 
 graphics = {
     'width' : 800,
-    'height': 600
+    'height': 600,
+    'resizable': 0
 }
 
 kivy = {

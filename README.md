@@ -1,6 +1,8 @@
 # Stigma Game Demo
-This repository contain demo game application based on Stigma framework. it contain some basic function in game
+This repository contain demo game application based on [Stigma](https://github.com/Kzulfazriawan/stigma) framework. it contain some basic function in game
 like save, load, scenario, animation and also option.
+
+![screenshot](screenshot.png)
 
 # Installation
 ## windows
