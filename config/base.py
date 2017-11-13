@@ -13,6 +13,6 @@ graphics = {
 kivy = {
     'exit_on_escape': 0,
     'window_icon'   : 'assets/logo.png',
-    'log_dir'       : '/home/kzulfazriawan/Works/Kpython/workin/Stigma/logging',
+    'log_dir'       : '/home/kzvlfz/ubuntu/stigma-game-demo/logging',
     'log_name'      : 'stigma_%y-%m-%d_%_.txt'
 }

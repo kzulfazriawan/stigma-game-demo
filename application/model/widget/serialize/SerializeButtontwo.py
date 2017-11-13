@@ -8,5 +8,6 @@ class SerializeButtontwo(Button):
     def __init__(self):
         super(SerializeButtontwo, self).__init__()
         self.value  = '1'
+        self.text  = 'SLOT 2'
         self.data   = None
         self.params = int(self.value)
